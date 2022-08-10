@@ -1,1 +1,5 @@
+# checkUser
 echo '{"username":"john", "password": "123"}' | curl -H "Content-Type: application/json" -d @- -X POST https://dec-backup.data-container.net/checkUser
+
+# backup
+echo '{"username":"john", "password": "123", "payload":{"key": "value"}}' | curl -H "Content-Type: application/json" -d @- -X POST https://dec-backup.data-container.net/backup

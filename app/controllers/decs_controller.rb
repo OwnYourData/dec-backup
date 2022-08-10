@@ -47,8 +47,24 @@ class DecsController < ApplicationController
                status: 200
     end
 
+    # Input 
+    # {
+    #   "username": "john_doe",
+    #   "password": "password in cleartext"
+    # }
     def restore
-        render json: {"method": "restore"},
+        username = params[:username].to_s
+        password = params[:password].to_s
+        puts "User: " + username
+        puts "Pwd: " + password
+
+        # get orig DID
+        # resolve DID
+        # retrieve encrypted payload
+        # decrypt payload
+
+        retVal = {"key" => "value"}        
+        render json: retVal.to_json,
                status: 200
     end
 
