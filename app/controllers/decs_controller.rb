@@ -21,8 +21,29 @@ class DecsController < ApplicationController
                status: 200
     end
 
+    # Input
+    # {
+    #   "username": "john_doe",
+    #   "password": "pwd",
+    #   "payload": {["unencrypted JSON object"]}
+    # }
     def backup
-        render json: {"method": "backup"},
+        username = params[:username].to_s
+        password = params[:password].to_s
+        payload = params[:payload] rescue nil
+        puts "User: " + username
+        puts "Pwd: " + password
+        puts "Payload: ---"
+        puts payload.to_json
+        puts "------------"
+
+        # get orig DID
+        # encrypt payload
+        # write encrypted payload
+        # return DID
+
+        did = {"did" => "did:oyd:zQmaBZTghndXTgxNwfbdpVLWdFf6faYE4oeuN2zzXdQt1kh"}
+        render json: did.to_json,
                status: 200
     end
 
